@@ -1,6 +1,13 @@
 %descomposicion PLU
-%A matriz
-%bs para la matriz aumentada
+% A matriz
+% bs para la matriz aumentada
+% bs vector fila
+% PA = LU
+% Ax=b
+% P*b = y_temp
+% L(Ux)=(P*b)
+% L(y)=y_temp sust_progresiva
+% Ux=y   sust_regresiva
 function x=descomposicionPLU(A,bs)
   [m_row m_col]=size(A);
   m_A = A;
@@ -44,8 +51,8 @@ function x=descomposicionPLU(A,bs)
   printf("Matriz LU \n");
   m_L*m_U
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  bs=bs';
-  printf("Matriz P*bs")
+  bs=bs'; %vector columna
+  printf("Matriz P*bs \n");
   PB=m_P*bs
   [fila col]=size(PB);
   y_temp=(PB(:,col))'; %vector fila
