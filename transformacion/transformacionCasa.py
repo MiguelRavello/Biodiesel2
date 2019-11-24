@@ -53,5 +53,5 @@ def main():
     T=np.array([[1,2],[2,-1]]);
     points=np.array([[0,0],[0,2],[1,3],[2,2],[2,0]]);
     u=transformarPuntos(2,2,T,points);
-    dibujarPuntos(poinst);
+    dibujarPuntos(points);
     dibujarPuntos(u);
