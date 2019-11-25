@@ -16,6 +16,8 @@ def rotar(punto,angulo):
     v=np.array([punto]);
     return np.matmul(R,v.T).T;
 
+#siendo u, v
+# vectores en Rn
 def dibujar(u,v):
     n=len(v);
     A=np.array([u,v]);
@@ -56,3 +58,8 @@ def dibujar(u,v):
         plt.show();
     else:
         print("no se puede graficar");
+
+def main():
+    u=np.array([5,5]);
+    v=rotacion(u,30);
+    dibujar(u,v);
