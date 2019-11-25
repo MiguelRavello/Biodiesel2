@@ -31,13 +31,14 @@ def dibujarPuntos(puntos):
     llegada=np.append(llegada,O,axis=0);
     origen=puntos.T;
     llegada=llegada.T;
+    llegada=llegada-origen;
     ox=origen[0];
     oy=origen[1];
     lx=llegada[0];
     ly=llegada[1];
-    plt.quiver(ox,oy,lx,ly,color=['r'],angle='xy',scale_units='xy',scale=1);
-    plt.xlim(-5,15);
-    plt.ylim(-10,10);
+    plt.quiver(ox,oy,lx,ly,color=['r'],scale=10);
+    plt.xlim(0,10);
+    plt.ylim(-2,8);
     plt.grid(b=True, which='major');
     plt.show();
 
@@ -53,5 +54,6 @@ def main():
     T=np.array([[1,2],[2,-1]]);
     points=np.array([[0,0],[0,2],[1,3],[2,2],[2,0]]);
     u=transformarPuntos(2,2,T,points);
+    print(u);
     dibujarPuntos(points);
     dibujarPuntos(u);
