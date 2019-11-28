@@ -29,7 +29,7 @@ def dibujar(u,v):
         plt.quiver(*origin,x,y,color=['r','b'],scale=10);
         plt.xlim(-10,10);
         plt.ylim(-10,10);
-        plt.grid(b=True, which='minor');
+        plt.grid(b=True, which='major');
         plt.show();
     elif(n==3):
         fig=plt.figure();
@@ -60,6 +60,13 @@ def dibujar(u,v):
         print("no se puede graficar");
 
 def main():
-    u=np.array([5,5]);
-    v=rotacion(u,30);
-    dibujar(u,v);
+    u=np.array([1,1]);
+    v=rotar(u,30);
+    print(v);
+    dibujar(u,v[0]);
+    print("...........")
+    x=np.array([10,10,10]);
+    y=rotar(x,53);
+    print(y);
+    dibujar(x,y[0]);
+
