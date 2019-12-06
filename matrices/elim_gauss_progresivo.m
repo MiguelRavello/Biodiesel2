@@ -3,8 +3,8 @@
 function r=elim_gauss_progresivo(A,xs)
   m_matrix=A;
   columna=xs';
-  verdad=rango_aumentado(A,xs);
-  if(verdad)
+  [v1,v2]=rango_aumentado(A,xs);
+  if(v2)
     m_matrix=insertCol(m_matrix,columna);
     m_matrix=escalonadoSuperior(m_matrix)
     [n m]=size(m_matrix);

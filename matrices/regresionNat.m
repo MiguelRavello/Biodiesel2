@@ -17,9 +17,9 @@ function coef=regresionNAt(Xi,Yi,n)
       xi=xi.^i;
       A(:,i+1)=xi;
     endfor
-    A
-    B=Yi'
-    B
+    %A
+    B=Yi';
+    %B
     coef=inv(A'*A)*A'*B;
   endif     
 endfunction

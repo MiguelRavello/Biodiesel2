@@ -30,7 +30,7 @@ function coef=regresionN(Xi,Yi,n)
     A
     printf("Vector que representa B de Ax=B\n");
     Syxn
-    coef=descomposicionCholesky(A,Syxn);
+    coef=solucionCholesky(A,Syxn);
   else
     error("esta mal dimensionado las listas Xi y Yi");
   endif

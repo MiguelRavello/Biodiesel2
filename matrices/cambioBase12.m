@@ -8,5 +8,5 @@
 function M=cambioBase12(A,B)
   B1=A';
   B2=B';
-  M= inversa(B2)*B1;
+  M= inv(B2)*B1;
 endfunction

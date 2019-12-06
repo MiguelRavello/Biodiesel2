@@ -8,7 +8,7 @@
 %b vector fila
 %L es triangular inferior
 %U es triangular superior
-function X=descomposicionLU(A,b)
+function [m_L,m_U]=descomposicionLU(A)
     [m_row m_col]=size(A);
     m_A=A;
     m_L=zeros(m_row);
@@ -30,23 +30,4 @@ function X=descomposicionLU(A,b)
     endfor
     I=eye(m_row);
     m_L = m_L + I;
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %prueba
-    %m_I
-    %m_I es como m_L pero con el signo cambiado
-    printf("Matriz L \n");
-    m_L
-    printf("Matriz U \n");
-    m_U
-    printf("Matriz LU \n");
-    m_L*m_U
-    printf("Matriz A \n");
-    m_A
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    printf("b \n");
-    b
-    y=sust_progresiva(m_L,b);
-    printf("solucion temporal y \n");
-    y
-    X=sust_regresiva(m_U,y);
 endfunction

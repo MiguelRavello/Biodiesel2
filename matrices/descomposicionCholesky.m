@@ -4,7 +4,7 @@
 % G'X=Y   
 % GY=b  %sustitucion progresiva
 % con Y solucionamos G'X=Y con  sustitucion regresiva
-function X=descomposicionCholesky(A,b)
+function [G,Gt]=descomposicionCholesky(A,b)
   if (cholesky(A))
     [m_row m_col]=size(A);
     G=zeros(m_row,m_col);
@@ -29,21 +29,6 @@ function X=descomposicionCholesky(A,b)
       endfor
     endfor
     Gt=G';
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %prueba
-    printf("matriz G \n");
-    G
-    printf("matrix G*G' \n");
-    G*Gt
-    printf("matrix A \n");
-    A
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    printf("b \n");
-    b
-    Y=sust_progresiva(G,b); %G*Y=b
-    printf("solucion temporal y \n");
-    Y
-    X=sust_regresiva(Gt,Y); %Gt*X=Y
   else
     error("no tiene descomposicion de Cholesky \n");
   endif

@@ -3,8 +3,8 @@
 function r=elim_gauss_regresivo(A,xs)
   m_matrix=A;
   columna=xs';
-  verdad=rango_aumentado(A,xs);
-  if(verdad)
+  [v1,v2]=rango_aumentado(A,xs);
+  if(v2)
     %matriz aumentada insertando una columna a la matriz A
     m_matrix=insertCol(m_matrix,columna);
     m_matrix=escalonadoInferior(m_matrix)

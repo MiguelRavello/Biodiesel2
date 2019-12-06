@@ -8,7 +8,7 @@
 % L(Ux)=(P*b)
 % L(y)=y_temp sust_progresiva
 % Ux=y   sust_regresiva
-function x=descomposicionPLU(A,bs)
+function [m_P,m_L,m_U]=descomposicionPLU(A)
   [m_row m_col]=size(A);
   m_A = A;
   m_P = eye(m_row);
@@ -38,24 +38,4 @@ function x=descomposicionPLU(A,bs)
   endfor
   I=eye(m_row);
   m_L = m_L + I;
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  %prueba
-  printf("Matriz P \n");
-  m_P
-  printf("Matriz L \n");
-  m_L
-  printf("Matriz U \n");
-  m_U
-  printf("Matriz PA \n");
-  m_P*m_A
-  printf("Matriz LU \n");
-  m_L*m_U
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  bs=bs'; %vector columna
-  printf("Matriz P*bs \n");
-  PB=m_P*bs
-  [fila col]=size(PB);
-  y_temp=(PB(:,col))'; %vector fila
-  y=sust_progresiva(m_L,y_temp);
-  x=sust_regresiva(m_U,y);
 endfunction

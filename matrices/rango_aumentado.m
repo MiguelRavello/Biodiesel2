@@ -1,27 +1,30 @@
 %rango aumentado comparado
 % M es la matrix base
 % xs vector para la matriz aumentada
+% xs vector fila
 % t bool
-function t=rango_aumentado(M,xs)
+function [v1,v2]=rango_aumentado(M,xs)
   A=M;
   [n m]=size(A);
-  xs=xs';
+  xs=xs'; %vector columna
   Ab=insertCol(M,xs);
   i=rango(A);
   j=rango(Ab);
   if(i==j)
+    v1=true;
     if(n==i)
       %el sistema tiene solucion unica
-      t=true;
+      v2=true;
     else
       %tiene infinitas soluciones
-      t=false;
-      printf("tiene infinitas soluciones \n");
+      v2=false;
+      %printf("tiene infinitas soluciones \n");
     endif
   else
     %no tiene solucion
-    t=false;
-    printf("no tiene solucion \n");
+    v1=false;
+    v2=false;
+    %printf("no tiene solucion \n");
   endif
   
 endfunction
