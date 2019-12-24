@@ -18,10 +18,10 @@ Del curso de **Algebra Lineal** se realizo las siguientes operaciones en **matla
 | ------------------------------------- |
 | Matriz de cambio de base              |
 | Solucion de sistema de ecuaciones por |
-|              |  Cholesky              |
-|              |  LU                    |
-|              |  PLU                   |
-|              |  Eliminacion gaussiana |
+| **Cholesky**              |
+| **LU**                    |
+| **PLU**                   |
+| **Eliminacion gaussiana** |
 | Rango de una matriz aumentada         |
 | Suma de matrices                      |
 | Multiplicacion de matrices            |
